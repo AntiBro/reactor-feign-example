@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: fis-feedengine
+  profiles:
+    active: dev
+
+logging.level.root: info
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: test
+---
