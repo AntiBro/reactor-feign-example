@@ -2,7 +2,6 @@ package com.example.demo;
 
 import com.example.demo.feign.BaiduApi;
 import com.example.demo.feign.BaiduApiFallbackFactory;
-import org.slf4j.event.Level;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactivefeign.ReactiveOptions;
@@ -15,7 +14,7 @@ import reactivefeign.webclient.WebReactiveOptions;
  * @Description config
  **/
 @Configuration
-public class config {
+public class ReacterFeignConfigService {
 
     @Bean
     public BaiduApi baiduApi(){
