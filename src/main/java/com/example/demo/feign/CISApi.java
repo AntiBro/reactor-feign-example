@@ -6,12 +6,12 @@ import reactor.core.publisher.Mono;
 /**
  * @Author huaili
  * @Date 2019/12/10 13:59
- * @Description TODO
+ * @Description CISApi
  **/
 //@ReactiveFeignClient(value = "baiduapi",url = "http://www.baidu.com",configuration = CustomerFeignConfigurationWithoutRetry.class)
-public interface BaiduApi {
+public interface CISApi {
 
     @RequestLine("GET /")
-    Mono<String> getHome();
+    Mono<String> getFeed();
 
 }

@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.feign.BaiduApi;
-import com.example.demo.feign.BaiduApiFallbackFactory;
+import com.example.demo.feign.CISApi;
+import com.example.demo.feign.CISApiFallbackFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactivefeign.ReactiveOptions;
@@ -17,11 +17,11 @@ import reactivefeign.webclient.WebReactiveOptions;
 public class ReacterFeignConfigService {
 
     @Bean
-    public BaiduApi baiduApi(){
+    public CISApi baiduApi(){
         String service = "https://kepu.qq.com/";
 
         ReactiveOptions reactiveOptions = new WebReactiveOptions.Builder().setReadTimeoutMillis(2200L).setWriteTimeoutMillis(2200L).setConnectTimeoutMillis(5000L).build();
-        BaiduApi baiduApi = WebReactiveFeign.<BaiduApi>builder().options(reactiveOptions).fallbackFactory(new BaiduApiFallbackFactory()).target(BaiduApi.class, service);
-        return baiduApi;
+        CISApi CISApi = WebReactiveFeign.<CISApi>builder().options(reactiveOptions).fallbackFactory(new CISApiFallbackFactory()).target(CISApi.class, service);
+        return CISApi;
     }
 }

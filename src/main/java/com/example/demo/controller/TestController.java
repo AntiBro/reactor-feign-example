@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.feign.BaiduApi;
+import com.example.demo.feign.CISApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestController {
 
     @Autowired
-    BaiduApi baiduApi;
+    CISApi CISApi;
 
     @RequestMapping("/test")
    public Flux test() {
@@ -32,7 +32,7 @@ public class TestController {
         ConcurrentHashMap hashMap = new ConcurrentHashMap();
         long t0 = System.currentTimeMillis();
         for(int i=0;i<15;i++){
-            Mono ret = baiduApi.getHome();
+            Mono ret = CISApi.getFeed();
             flux = flux.concatWith(ret);
         }
 
